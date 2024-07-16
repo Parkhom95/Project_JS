@@ -7,13 +7,17 @@
 
 function sumInput() {
     let num = [];
-    value = prompt("Vvedite znachenie:");
-    while (value != null) {
-        num.push(value);
-        value === "" || value === 0 ?  isFinite(value): breake;
+    while (true) {
         
-    }
+        let value = prompt("Vvedite znachenie:",0);    
+        if (value === "" || value === null || isFinite(value)) break;
         
+        num.push(+value);
     }
-    sumInput();
-    alert(num);
+      let sum = 0;
+    for(let number of num) {
+        sum += number;
+    }
+    return sum;
+}
+    alert(sumInput());
